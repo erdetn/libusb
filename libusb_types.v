@@ -127,6 +127,7 @@ struct C.libusb_context {
 }
 
 pub struct Context {
+mut:
 	ctx &C.libusb_context
 	is_initialized bool 
 }
@@ -147,6 +148,13 @@ struct C.libusb_version {
 	nano     u16
 	rc       &char
 	describe &char
+}
+pub struct Version {
+pub:
+	major u16
+	minor u16
+	micro u16 
+	nano  u16
 }
 
 struct C.libusb_iso_packet_descriptor {
